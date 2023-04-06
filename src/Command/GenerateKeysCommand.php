@@ -12,12 +12,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class GenerateKeysCommand extends Command
 {
-    public function __construct(
-        private readonly Sodium $sodium,
-    ) {
-        parent::__construct();
-    }
-
     protected function configure(): void
     {
         $this
@@ -34,8 +28,7 @@ class GenerateKeysCommand extends Command
             return Command::FAILURE;
         }
 
-        /** @var Box $box */
-        $box = $this->sodium->with('box');
+        $box = Box::create();
         $publicKey = $box->getPublicKey();
         $privateKey = $box->getPrivateKey();
 

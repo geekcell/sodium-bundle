@@ -4,13 +4,9 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 use GeekCell\SodiumBundle\Command\GenerateKeysCommand;
-use GeekCell\SodiumBundle\Sodium\Crypto\Box;
-use GeekCell\SodiumBundle\Sodium\Sodium;
 use Symfony\Component\Console\Application;
 
-$sodium = new Sodium();
-$sodium->addAlgorithm(Box::create(), 'box', true);
-
 $application = new Application();
-$application->add(new GenerateKeysCommand($sodium));
+$application->add(new GenerateKeysCommand());
+
 $application->run();
