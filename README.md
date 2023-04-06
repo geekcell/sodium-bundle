@@ -125,7 +125,7 @@ namespace Alice\Service;
 
 use GeekCell\SodiumBundle\Sodium\Sodium;
 
-class AuthenicatedEncryptionService
+class AuthenticatedEncryptionService
 {
     public function __construct(
         private readonly Sodium $sodium,
