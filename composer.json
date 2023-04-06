@@ -1,0 +1,47 @@
+{
+    "name": "geekcell/sodium-bundle",
+    "description": "A Symfony bundle to interact with PHP's Sodium extension",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "version": "0.1.0",
+    "authors": [
+        {
+            "name": "Pascal Cremer",
+            "email": "pascal.cremer@geekcell.io"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "GeekCell\\SodiumBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GeekCell\\SodiumBundle\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "ext-sodium": "*",
+        "geekcell/container-facade": "^1.0",
+        "symfony/dependency-injection": "^6.0",
+        "symfony/http-kernel": "^6.0",
+        "symfony/console": "^6.0",
+        "symfony/config": "^6.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.16",
+        "mockery/mockery": "^1.5",
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^10.0",
+        "symfony/yaml": "^6.2",
+        "symfony/framework-bundle": "^6.2",
+        "phpstan/phpstan-mockery": "^1.1",
+        "phpstan/phpstan-symfony": "^1.2"
+    },
+    "scripts": {
+        "gc:tests": "phpunit --testdox --colors=always",
+        "gc:cs-lint": "php-cs-fixer fix --config .php-cs-fixer.php --diff -vvv --dry-run",
+        "gc:cs-fix": "php-cs-fixer fix --config .php-cs-fixer.php -vvv || true",
+        "gc:phpstan": "phpstan analyse --memory-limit=2G --no-progress --level=8"
+    }
+}

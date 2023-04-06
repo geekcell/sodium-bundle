@@ -1,0 +1,16 @@
+services:
+    GeekCell\SodiumBundle\Sodium\Crypto\Box:
+        arguments:
+            - '%geek_cell_sodium.public_key%'
+            - '%geek_cell_sodium.private_key%'
+        tags:
+            - { name: 'geek_cell_sodium.crypto.algorithm', alias: 'box', is_default: true }
+
+    GeekCell\SodiumBundle\Sodium\Sodium:
+        public: true
+
+    GeekCell\SodiumBundle\Command\GenerateKeysCommand:
+        arguments:
+            - '@GeekCell\SodiumBundle\Sodium\Sodium'
+        tags:
+            - { name: 'console.command' }

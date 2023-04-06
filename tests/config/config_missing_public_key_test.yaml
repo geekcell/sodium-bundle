@@ -1,0 +1,2 @@
+geek_cell_sodium:
+    private_key: '%env(SODIUM_PRIVATE_KEY)%'

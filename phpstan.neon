@@ -1,0 +1,13 @@
+includes:
+    - vendor/phpstan/phpstan-mockery/extension.neon
+    - vendor/phpstan/phpstan-symfony/extension.neon
+
+parameters:
+    level: max
+    checkGenericClassInNonGenericObjectType: false
+    paths:
+        - src
+        - tests
+    excludePaths:
+        - bin/
+        - vendor/
