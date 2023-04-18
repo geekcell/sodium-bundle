@@ -3,7 +3,7 @@
     "description": "A Symfony bundle to interact with PHP's Sodium extension",
     "type": "symfony-bundle",
     "license": "MIT",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "authors": [
         {
             "name": "Pascal Cremer",
