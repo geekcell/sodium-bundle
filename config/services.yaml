@@ -10,7 +10,5 @@ services:
         public: true
 
     GeekCell\SodiumBundle\Command\GenerateKeysCommand:
-        arguments:
-            - '@GeekCell\SodiumBundle\Sodium\Sodium'
         tags:
             - { name: 'console.command' }
