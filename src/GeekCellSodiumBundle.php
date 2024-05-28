@@ -40,6 +40,8 @@ class GeekCellSodiumBundle extends Bundle
     {
         parent::boot();
 
-        Facade::setContainer($this->container);
+        if ($this->container) {
+            Facade::setContainer($this->container);
+        }
     }
 }

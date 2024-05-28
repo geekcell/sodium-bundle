@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace GeekCell\SodiumBundle\Command;
 
 use GeekCell\SodiumBundle\Sodium\Crypto\Box;
-use GeekCell\SodiumBundle\Sodium\Sodium;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -20,7 +19,7 @@ class GenerateKeysCommand extends Command
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if (\extension_loaded('sodium') === false) {
             $output->writeln("<error>The sodium extension is not loaded. Please install and enable it.</error>");
