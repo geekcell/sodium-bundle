@@ -24,7 +24,7 @@ jobs:
             - name: Setup PHP
               uses: shivammathur/setup-php@2.23.0
               with:
-                php-version: '8.1'
+                php-version: '8.2'
                 coverage: xdebug
 
             # Install dependencies
