@@ -20,7 +20,7 @@ class GenerateKeysCommand extends Command
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if (\extension_loaded('sodium') === false) {
             $output->writeln("<error>The sodium extension is not loaded. Please install and enable it.</error>");
