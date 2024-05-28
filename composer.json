@@ -21,6 +21,7 @@
         }
     },
     "require": {
+        "php": "^8.2",
         "ext-sodium": "*",
         "geekcell/container-facade": "^1.0",
         "symfony/dependency-injection": "^6.0 | ^7.0",
